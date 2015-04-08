@@ -148,7 +148,7 @@ in_flavor 'master' do
                     "Should I do it ? This is required to continue building"],
                 :default => 'yes'
 
-            if Autoproj.user_config("UPDATE_VISO2_FROM_GIT")
+            if user_config("UPDATE_VISO2_FROM_GIT")
                 Autoproj.warn "deleting Viso2 source directory to migrate from the Git checkout to the release tarball"
                 FileUtils.rm_rf pkg.srcdir
             else
@@ -488,7 +488,7 @@ in_flavor 'master', 'stable' do
                     "Should I do it ? This is required to continue building"],
                 :default => 'yes'
 
-            if Autoproj.user_config("UPDATE_PCL_FROM_SVN")
+            if user_config("UPDATE_PCL_FROM_SVN")
                 Autoproj.warn "deleting PCL source directory to migrate from the SVN checkout to the release tarball"
                 FileUtils.rm_rf pkg.srcdir
             else
